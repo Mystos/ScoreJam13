@@ -11,12 +11,12 @@ TagManager:
   - World
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background
+  - Ground
+  - Coliseewalls
+  - Tribunes
+  - Walls
+  - Props
   - 
   - 
   - 
@@ -40,4 +40,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 681222775
+    locked: 0
+  - name: Ground
+    uniqueID: 51382745
+    locked: 0
+  - name: Coliseewalls
+    uniqueID: 1083728511
+    locked: 0
+  - name: Tribunes
+    uniqueID: 914247559
+    locked: 0
+  - name: New Layer
+    uniqueID: 1161335549
+    locked: 0
+  - name: Props
+    uniqueID: 1466104375
     locked: 0
