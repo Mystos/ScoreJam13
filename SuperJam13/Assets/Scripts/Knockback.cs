@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float knockbackForce;
+    float mass = 3.0f;
+    Vector3 impact = Vector3.zero;
+    private CharacterController characterController;
 
-    public void Start()
+
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        characterController = GetComponent<CharacterController>();
     }
-    public void Knock()
+
+    public void AddImpact(Vector3 dir, float force)
     {
-      rb.AddForce(transform.right * knockbackForce);
+        dir.Normalize();
+        if(dir.y < 0)
+        {
+            dir.y = -dir.y;
+        }
+        impact += dir.normalized * force / mass;
+
     }
+
+    private void Update()
+    {
+        if(impact.magnitude > 0.2f)
+        {
+           characterController.Move(impact * Time.deltaTime);
+        }
+
+        impact = Vector3.Lerp(impact, Vector3.zero, 5 * Time.deltaTime);
+    }
+
 }
