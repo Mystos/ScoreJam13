@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - Tribunes
   - Walls
   - Props
-  - 
-  - 
-  - 
+  - Player
+  - Obstacle
+  - Enemy
   - 
   - 
   - 
@@ -55,6 +56,12 @@ TagManager:
     locked: 0
   - name: New Layer
     uniqueID: 1161335549
+    locked: 0
+  - name: Enemmy
+    uniqueID: 3981384855
+    locked: 0
+  - name: Player
+    uniqueID: 1319130095
     locked: 0
   - name: Props
     uniqueID: 1466104375
