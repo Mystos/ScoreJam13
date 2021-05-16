@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private CharacterController controller;
     private PlayerActionControls playerActionControls;
 
     public LayerMask collisionLayer;
@@ -23,6 +22,9 @@ public class PlayerController : MonoBehaviour
 
     private float currentDashTimer;
 
+    Controller2D controller;
+
+
     bool isDashing;
     bool isDashAvailable = true;
 
@@ -30,7 +32,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerActionControls = new PlayerActionControls();
-        controller = GetComponent<CharacterController>();
     }
 
     private void OnEnable()
@@ -43,6 +44,11 @@ public class PlayerController : MonoBehaviour
         playerActionControls.Disable();
     }
 
+    private void Start()
+    {
+        controller = GetComponent<Controller2D>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -50,6 +56,8 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
+
         // Mouse Orientation
         //Get the Screen positions of the object
         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
@@ -74,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
         if (!isDashing)
         {
-            controller.Move(movDir.normalized * moveSpeed * Time.deltaTime);
+            controller.Move( movDir.normalized * moveSpeed * Time.deltaTime);
         }
 
         // Dash
@@ -114,7 +122,7 @@ public class PlayerController : MonoBehaviour
 
             Vector3 dashPosArrival = movDir.normalized * dashDistanceRaycast;
 
-            controller.Move(dashPosArrival * dashDashTime);
+            controller.Move( dashPosArrival * dashDashTime);
 
             currentDashTimer -= Time.deltaTime;
 

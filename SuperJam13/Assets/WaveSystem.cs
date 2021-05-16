@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class WaveSystem : MonoBehaviour
 {
+    PlayableDirector pbEndLevel;
+
     public Wave wave;
     
     int currentPhase = -1;
@@ -16,16 +19,22 @@ public class WaveSystem : MonoBehaviour
     public Transform location5;
 
     public GameScene nextLevel;
+    internal bool waveActivated = false;
+
+    private void Start()
+    {
+        pbEndLevel = GetComponent<PlayableDirector>();
+    }
 
     private void Update()
     {
-        if(nbrOfEnemy <= 0)
+        if(nbrOfEnemy <= 0 && waveActivated)
         {
             NextPhase();
         }
     }
 
-    private void NextPhase()
+    public void NextPhase()
     {
         currentPhase++;
         if(currentPhase <= wave.phaseList.Count -1)
@@ -76,9 +85,35 @@ public class WaveSystem : MonoBehaviour
         }
         else
         {
+                if(pbEndLevel != null)
+                {
+                    pbEndLevel.stopped += EndLevelAnimation;
+                    pbEndLevel.Play();
+
+                    PlayerController playerController = FindObjectOfType<PlayerController>();
+                    if (playerController != null)
+                    {
+                        this.transform.eulerAngles = new Vector3(0, 0, 0);
+                        playerController.enabled = false;
+                    }
+            }
+            else
+            {
+                SceneLoader.Instance.LoadMainMenu();
+
+            }
+
+
+        }
+    }
+
+    private void EndLevelAnimation(PlayableDirector action)
+    {
+        if (action == pbEndLevel)
+        {
             // The level endend
             // Load next level
-            if(nextLevel != null)
+            if (nextLevel != null)
             {
                 SceneLoader.Instance.LoadLevel(nextLevel.sceneName);
 
@@ -88,9 +123,10 @@ public class WaveSystem : MonoBehaviour
                 SceneLoader.Instance.LoadMainMenu();
 
             }
+
         }
     }
 
-    
+
 
 }

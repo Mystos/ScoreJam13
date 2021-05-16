@@ -6,12 +6,12 @@ public class Knockback : MonoBehaviour
 {
     float mass = 3.0f;
     Vector3 impact = Vector3.zero;
-    private CharacterController characterController;
+    private Controller2D characterController;
 
 
     private void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        characterController = GetComponent<Controller2D>();
     }
 
     public void AddImpact(Vector3 dir, float force)

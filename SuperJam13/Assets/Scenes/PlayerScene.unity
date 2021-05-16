@@ -123,6 +123,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &108403740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3486701342950316417, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
+  m_PrefabInstance: {fileID: 3486701342463774255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &108403742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108403740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2784aac76a8b34daa63b4e20d34d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  horizontalRayCount: 4
+  verticalRayCount: 4
+--- !u!61 &108403745
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108403740}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!4 &587208626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3486701342950316445, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
@@ -679,9 +727,14 @@ PrefabInstance:
       propertyPath: dashCooldown
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3486701342950316447, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
+      propertyPath: dashDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8643937756900641674, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3486701342950316416, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}

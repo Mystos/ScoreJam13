@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
 
 public class SpawnScript : MonoBehaviour
 {
     public PlayableDirector wakeUp;
+    public TextMeshProUGUI textHistoire;
 
     private void Start()
     {
@@ -19,6 +21,12 @@ public class SpawnScript : MonoBehaviour
     {
         if (wakeUp != null)
         {
+            PlayerController playerController = FindObjectOfType<PlayerController>();
+            if (playerController != null)
+            {                
+                this.transform.eulerAngles = new Vector3(0, 0, 0);
+                playerController.enabled = false;
+            }
             wakeUp.Play();
         }
     }
@@ -27,11 +35,18 @@ public class SpawnScript : MonoBehaviour
     {
         if (action == wakeUp)
         {
-            CharacterController charController = GetComponent<CharacterController>();
-            PlayerController playerController = GetComponent<PlayerController>();
-            this.transform.eulerAngles = new Vector3(0, 0, 0);
-            charController.enabled = true;
-            playerController.enabled = true;
+            PlayerController playerController = FindObjectOfType<PlayerController>();
+            if (playerController != null)
+            {
+                this.transform.eulerAngles = new Vector3(0, 0, 0);
+                playerController.enabled = true;
+            }
+
+            WaveSystem wave = FindObjectOfType<WaveSystem>();
+            if(wave != null)
+            {
+                wave.waveActivated = true;
+            }
         }
     }
 }
