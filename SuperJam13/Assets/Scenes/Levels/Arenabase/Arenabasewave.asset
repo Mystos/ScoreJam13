@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82649aad76bc2534ca980cc3e4be901c, type: 3}
+  m_Name: Arenabasewave
+  m_EditorClassIdentifier: 
+  phaseList:
+  - {fileID: 11400000, guid: f4e9437926621514987e30fb06a379fa, type: 2}
+  - {fileID: 11400000, guid: 88ac61e174e970d4d8be43fff386a8d5, type: 2}
+  - {fileID: 11400000, guid: 4a426f7f6b28052499c6a0196f09a96d, type: 2}
+  - {fileID: 11400000, guid: 4067140edad26944695336bc43bde39d, type: 2}
+  - {fileID: 11400000, guid: e9acf27e318afb94fa0d26a26aa8ad35, type: 2}

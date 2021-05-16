@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82649aad76bc2534ca980cc3e4be901c, type: 3}
+  m_Name: Night wave
+  m_EditorClassIdentifier: 
+  phaseList:
+  - {fileID: 11400000, guid: 314adb43133c04542bb4ceebd9507fbc, type: 2}
+  - {fileID: 11400000, guid: 20e6b5e005758b54e947ae06db1ea629, type: 2}
+  - {fileID: 11400000, guid: 1fa78344491868746a65558e55c5586e, type: 2}
+  - {fileID: 11400000, guid: e51d79757961b964e80f63cb6016fee6, type: 2}
+  - {fileID: 11400000, guid: bfab1af95cde0334593b36c4d1de448f, type: 2}
+  - {fileID: 11400000, guid: 22d189ddab0dfbe4f94be884ed038597, type: 2}

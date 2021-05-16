@@ -686,6 +686,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3486701342950316446, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
+      propertyPath: m_SortingLayer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486701342950316446, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486701342950316446, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -900786237
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486701342950316447, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486701342950316447, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
+      propertyPath: dashDistance
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486701342950316447, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
+      propertyPath: collisionLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8643937756900641674, guid: afdc9ae13f7110a43b86892823a3f1c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

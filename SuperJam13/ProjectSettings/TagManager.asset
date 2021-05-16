@@ -55,15 +55,6 @@ TagManager:
   - name: Tribunes
     uniqueID: 914247559
     locked: 0
-  - name: New Layer
-    uniqueID: 1161335549
-    locked: 0
-  - name: Enemmy
-    uniqueID: 3981384855
-    locked: 0
-  - name: Player
-    uniqueID: 1319130095
-    locked: 0
   - name: Props
     uniqueID: 1466104375
     locked: 0
@@ -78,4 +69,10 @@ TagManager:
     locked: 0
   - name: Arena_obstacle
     uniqueID: 1181104249
+    locked: 0
+  - name: Enemmy
+    uniqueID: 3981384855
+    locked: 0
+  - name: Player
+    uniqueID: 3394181059
     locked: 0
