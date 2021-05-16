@@ -10,16 +10,13 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     public ScenesData sceneDataBase;
-    public GameObject loadingScreen;
-    public Slider slider;
-    public PlayableDirector logoClip;
-    public Text loadingProgressText;
     public static SceneLoader Instance;
     private List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
     bool worldHasLoaded = false;
     bool isPlayerLoaded = false;
     bool isLoadingCompleted = false;
     bool levelChange = false;
+    public GameObject leaderBoard;
 
     private void Awake()
     {
@@ -54,6 +51,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        leaderBoard.SetActive(false);
 
         // Check if the scene already loaded
         if (!SceneManager.GetSceneByName(sceneDataBase.mainMenuScenes.sceneName).IsValid())
@@ -96,8 +94,8 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadLevel(string sceneToLoadName)
     {
-        loadingScreen.SetActive(true);
-        logoClip.Play();
+        //loadingScreen.SetActive(true);
+        //logoClip.Play();
 
 
         if (SceneManager.GetSceneByName(sceneToLoadName).IsValid())
@@ -133,15 +131,6 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadWorld()
     {
-        // Hide menu
-        //Show Loading Screen
-        if(loadingScreen != null)
-        {
-            loadingScreen.SetActive(true);
-            logoClip.Play();
-
-        }
-
         if (!SceneManager.GetSceneByName(sceneDataBase.playerScene.sceneName).IsValid())
         {
             SceneManager.LoadScene(sceneDataBase.playerScene.sceneName, LoadSceneMode.Additive);
@@ -166,11 +155,6 @@ public class SceneLoader : MonoBehaviour
     /// <param name="sceneToLoad"></param>
     public void LoadWorld(GameScene sceneToLoad)
     {
-        // Hide menu
-        //Show Loading Screen
-        loadingScreen.SetActive(true);
-        logoClip.Play();
-
         // Check if the scene already loaded
         if (!SceneManager.GetSceneByName(sceneToLoad.sceneName).IsValid())
         {
@@ -284,11 +268,6 @@ public class SceneLoader : MonoBehaviour
         {
             sc.Spawn();
 
-            if(loadingScreen != null)
-            {
-                logoClip.Stop();
-                loadingScreen.SetActive(false);
-            }
             isLoadingCompleted = true;
         }
     }
@@ -296,22 +275,15 @@ public class SceneLoader : MonoBehaviour
     public void LevelChanged()
     {
 
-        CharacterController charController = FindObjectOfType<CharacterController>();
+        PlayerController charController = FindObjectOfType<PlayerController>();
         charController.enabled = false;
-        SpawnPlayerPosition spawn = null;
+        SpawnPlayerPosition spawn = FindObjectOfType<SpawnPlayerPosition>();
         Scene activeScene = SceneManager.GetActiveScene();
-        foreach (GameObject item in activeScene.GetRootGameObjects())
-        {
-            if (item.GetComponent<SpawnPlayerPosition>() != null)
-            {
-                spawn = item.GetComponent<SpawnPlayerPosition>();
-            }
-        }
+
 
         if (spawn != null)
         {
             charController.transform.position = spawn.transform.position;
-
         }
         else
         {
@@ -322,14 +294,21 @@ public class SceneLoader : MonoBehaviour
         charController.enabled = true;
 
         SpawnScript spawnScripts = FindObjectOfType<SpawnScript>();
-        if (loadingScreen != null)
-        {
-            logoClip.Stop();
-            loadingScreen.SetActive(false);
-        }
         if (spawnScripts != null)
         {
             spawnScripts.wakeUp?.Play();
+        }
+    }
+
+    public void EndGame()
+    {
+        Time.timeScale = 0f;
+        leaderBoard.SetActive(true);
+        HighscoreTable highscore = FindObjectOfType<HighscoreTable>();
+        ScoreManager score = FindObjectOfType<ScoreManager>();
+        if(highscore != null && score != null)
+        {
+            highscore.AddHigscoreEntry(score.score, "YOU");
         }
     }
 

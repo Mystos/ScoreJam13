@@ -45,6 +45,15 @@ public class PlayerAttack : MonoBehaviour
                         item.GetComponentInParent<Knockback>()?.AddImpact(-item.gameObject.transform.up, 50);
                     }
                 }
+                if(ennemies.Length > 0)
+                {
+                    AudioManager.instance.Play("SFX Sword miss");
+                }
+                else
+                {                   
+                    AudioManager.instance.Play("SFXSwordHit1");
+
+                }
                 attack.Play("PlayerAttackFX");
                 Debug.Log("attack");
             }

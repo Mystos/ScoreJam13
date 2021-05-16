@@ -85,7 +85,7 @@ public class HighscoreTable : MonoBehaviour
         transformList.Add(entryTransform);
     }
 
-    private void AddHigscoreEntry(int score, string name)
+    public void AddHigscoreEntry(int score, string name)
     {
         HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name };
 
@@ -102,7 +102,7 @@ public class HighscoreTable : MonoBehaviour
 
     private class Highscores
     {
-        public List<HighscoreEntry> highscoreEntries;
+        public List<HighscoreEntry> highscoreEntries = new List<HighscoreEntry>();
     }
 
     [System.Serializable]

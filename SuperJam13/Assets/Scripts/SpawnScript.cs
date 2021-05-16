@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -47,6 +48,8 @@ public class SpawnScript : MonoBehaviour
             {
                 wave.waveActivated = true;
             }
+
+            
         }
     }
 }

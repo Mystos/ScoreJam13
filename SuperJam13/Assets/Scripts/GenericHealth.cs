@@ -83,11 +83,23 @@ public class GenericHealth : MonoBehaviour
 
     public void DestroyGO()
     {
-        Destroy(this.gameObject);
-        WaveSystem wave = FindObjectOfType<WaveSystem>();
-        if (wave != null)
-        {
-            wave.nbrOfEnemy--;
-        }
+            WaveSystem wave = FindObjectOfType<WaveSystem>();
+            if (wave != null)
+            {
+                wave.nbrOfEnemy--;
+            }
+            // Add Score point
+            ScoreManager scoreMan = FindObjectOfType<ScoreManager>();
+            if (scoreMan != null)
+            {
+                scoreMan.AddScore(500);
+            }
+            Destroy(this.gameObject);
+    }
+
+
+    public void PlayerDeath()
+    {
+        SceneLoader.Instance.EndGame();
     }
 }

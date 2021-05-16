@@ -102,8 +102,6 @@ public class WaveSystem : MonoBehaviour
                 SceneLoader.Instance.LoadMainMenu();
 
             }
-
-
         }
     }
 
@@ -121,9 +119,7 @@ public class WaveSystem : MonoBehaviour
             else
             {
                 SceneLoader.Instance.LoadMainMenu();
-
             }
-
         }
     }
 

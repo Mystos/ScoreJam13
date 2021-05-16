@@ -167,10 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneDataBase: {fileID: 11400000, guid: f719a45198e7d1d48bf015333789c5a0, type: 2}
-  loadingScreen: {fileID: 0}
-  slider: {fileID: 0}
-  logoClip: {fileID: 0}
-  loadingProgressText: {fileID: 0}
+  leaderBoard: {fileID: 2055446166}
 --- !u!1 &138199397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,6 +1041,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1348564497857416234, guid: 541a8b46bb44ef54095bb38d744aed55, type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348564497857416234, guid: 541a8b46bb44ef54095bb38d744aed55, type: 3}
+      propertyPath: sounds.Array.data[2].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348564497857416234, guid: 541a8b46bb44ef54095bb38d744aed55, type: 3}
+      propertyPath: sounds.Array.data[3].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348564497857416234, guid: 541a8b46bb44ef54095bb38d744aed55, type: 3}
+      propertyPath: sounds.Array.data[1].mixer
+      value: 
+      objectReference: {fileID: 7359557379108226258, guid: 5b8ae18c7718943478ab4701768a89a5, type: 2}
+    - target: {fileID: 1348564497857416234, guid: 541a8b46bb44ef54095bb38d744aed55, type: 3}
+      propertyPath: sounds.Array.data[2].mixer
+      value: 
+      objectReference: {fileID: 7359557379108226258, guid: 5b8ae18c7718943478ab4701768a89a5, type: 2}
+    - target: {fileID: 1348564497857416234, guid: 541a8b46bb44ef54095bb38d744aed55, type: 3}
+      propertyPath: sounds.Array.data[3].mixer
+      value: 
+      objectReference: {fileID: 7359557379108226258, guid: 5b8ae18c7718943478ab4701768a89a5, type: 2}
     - target: {fileID: 2890347750034243190, guid: 541a8b46bb44ef54095bb38d744aed55, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1094,49 +1115,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 541a8b46bb44ef54095bb38d744aed55, type: 3}
---- !u!1 &894641969
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 894641971}
-  - component: {fileID: 894641970}
-  m_Layer: 0
-  m_Name: ScoreManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &894641970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894641969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e12cf195a0155245a736a491a711735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &894641971
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894641969}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945950994
 GameObject:
   m_ObjectHideFlags: 0
