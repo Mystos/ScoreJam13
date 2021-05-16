@@ -67,3 +67,15 @@ TagManager:
   - name: Props
     uniqueID: 1466104375
     locked: 0
+  - name: Ground arena
+    uniqueID: 2532922207
+    locked: 0
+  - name: Water
+    uniqueID: 2244305723
+    locked: 0
+  - name: Bridge
+    uniqueID: 825385459
+    locked: 0
+  - name: Arena_obstacle
+    uniqueID: 1181104249
+    locked: 0
