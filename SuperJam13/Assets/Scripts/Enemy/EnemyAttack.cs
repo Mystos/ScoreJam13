@@ -31,7 +31,7 @@ public class EnemyAttack : MonoBehaviour
             Collider2D[] players = Physics2D.OverlapCapsuleAll(attackAreaPos.position, attackAreaSize, CapsuleDirection2D.Vertical, attackCollider);
             foreach(Collider2D player in players)
             {
-                if (player != null)
+                if (player != null && player.CompareTag("Player"))
                 {
                     player.GetComponentInParent<GenericHealth>()?.Hit(attackDamage);
                 }
