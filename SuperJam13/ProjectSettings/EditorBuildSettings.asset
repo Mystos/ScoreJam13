@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Levels/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Arenabase 1.unity
@@ -20,5 +20,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 8185f81aee876fe4899024aaeb252dde
+  - enabled: 1
+    path: Assets/Scenes/Levels/Snow arena/Snow arena.unity
+    guid: 304ec99ef37e54c42a25f7c37e05ffd5
+  - enabled: 1
+    path: Assets/Scenes/Levels/Arenabase/Arenabase.unity
+    guid: f064e348749420b4aa003c0d4a3b5e89
+  - enabled: 1
+    path: Assets/Scenes/Levels/Water arena/Water arena.unity
+    guid: 2e57feabaa59e4f4a975b3d1fc4c893a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Night arena/Night level.unity
+    guid: 37fb15741f76b484d8491c6ebb2bc9e6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fea100601f9d7b44496d98395d4c4eda, type: 2}
