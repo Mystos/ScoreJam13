@@ -86,17 +86,20 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        IsGamePaused = false;
+        SceneLoader.Instance.LoadMainMenu();
     }
 
     public void Reset()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneLoader.Instance.LoadMainMenu();
     }
 
     public void QuitGame()
     {
+        Time.timeScale = 1f;
+        IsGamePaused = false;
         Application.Quit();
     }
 
@@ -122,6 +125,6 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 }

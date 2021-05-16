@@ -46,6 +46,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.IsGamePaused)
+        {
+            return;
+        }
         // Mouse Orientation
         //Get the Screen positions of the object
         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
@@ -68,7 +72,10 @@ public class PlayerController : MonoBehaviour
         if(movDir != Vector3.zero)
             Debug.DrawLine(this.transform.position, dashDistance * movDir, Color.red);
 
-        controller.Move(movDir.normalized * moveSpeed * Time.deltaTime);
+        if (!isDashing)
+        {
+            controller.Move(movDir.normalized * moveSpeed * Time.deltaTime);
+        }
 
         // Dash
         if (playerActionControls.Player.Dash.triggered && movDir != Vector3.zero && isDashAvailable)

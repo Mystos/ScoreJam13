@@ -25,6 +25,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.IsGamePaused)
+        {
+            return;
+        }
+
         if (timeBtwAttack <= 0)
         {
             // Attack

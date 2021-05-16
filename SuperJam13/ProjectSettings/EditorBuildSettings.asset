@@ -8,5 +8,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Arenabase 1.unity
+    guid: 701586d436376184e920ccdfd9982442
+  - enabled: 1
+    path: Assets/Scenes/SystemScene.unity
+    guid: d5468e4b73817924389629025809f1c6
+  - enabled: 1
+    path: Assets/Scenes/PlayerScene.unity
+    guid: 3213f47487838594a8f45744d04c8e3f
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8185f81aee876fe4899024aaeb252dde
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fea100601f9d7b44496d98395d4c4eda, type: 2}

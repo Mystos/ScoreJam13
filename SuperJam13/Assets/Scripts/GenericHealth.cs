@@ -84,5 +84,10 @@ public class GenericHealth : MonoBehaviour
     public void DestroyGO()
     {
         Destroy(this.gameObject);
+        WaveSystem wave = FindObjectOfType<WaveSystem>();
+        if (wave != null)
+        {
+            wave.nbrOfEnemy--;
+        }
     }
 }
